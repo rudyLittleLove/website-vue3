@@ -17,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'baseInfo',
         component: () => import('@/views/home/baseInfo.vue')
       },
+      {
+        path: '/blogs',
+        name: 'blogs',
+        component: () => import('@/views/blogs/blogs.vue')
+      },
     ]
     // children: [
     //   {

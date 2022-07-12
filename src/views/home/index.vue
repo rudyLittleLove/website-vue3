@@ -6,7 +6,7 @@
       //- div.el-icon-d-arrow-right( @click="showAudio = !showAudio")
       el-icon( :size="30" color="#ffffff" @click="showAudio = !showAudio")
         i-ep-DArrowRight
-      audio( loop autoplay src="../../../static/music/bg.mp3" ref="audio" controls class="audio")
+      audio( loop src="../../../static/music/bg.mp3" ref="audio" controls class="audio")
         source( src="../../../static/music/bg.mp3" type="audio/mp3")
     div( class="custom-scrollbar")
       router-view
