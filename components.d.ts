@@ -24,10 +24,17 @@ declare module '@vue/runtime-core' {
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
+    IEpArrowLeft: typeof import('~icons/ep/arrow-left')['default']
+    IEpArrowRight: typeof import('~icons/ep/arrow-right')['default']
     IEpDArrowLeft: typeof import('~icons/ep/d-arrow-left')['default']
     IEpDArrowRight: typeof import('~icons/ep/d-arrow-right')['default']
     IEpEdit: typeof import('~icons/ep/edit')['default']
+    IEpPromotion: typeof import('~icons/ep/promotion')['default']
+    IEpSPromotion: typeof import('~icons/ep/s-promotion')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

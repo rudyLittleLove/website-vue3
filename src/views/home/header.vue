@@ -130,7 +130,7 @@ const menuData:Tree[] = [
       },
       {
         label: 'coordinate',
-        routeName: 'xyz'
+        routeName: 'coordinates'
       }
     ]
   }

@@ -92,6 +92,11 @@ const routes: Array<RouteRecordRaw> = [
     //   }
     // ]
   },
+  {
+    path: '/coordinates',
+    name: 'coordinates',
+    component: () => import('@/views/coordinates/Index.vue')
+  },
 ]
 
 const router = createRouter({
