@@ -22,6 +22,34 @@ const routes: Array<RouteRecordRaw> = [
         name: 'blogs',
         component: () => import('@/views/blogs/blogs.vue')
       },
+      {
+        path: '/games',
+        name: 'games',
+        redirect: '/games/dragonQuestMonster',
+        component: () => import('@/views/games/games.vue'),
+        children: [
+          {
+            path: '/games/dragonQuestMonster',
+            name: 'dragonQuestMonster',
+            component: () => import('@/views/games/components/dragonQuestMonster.vue')
+          },
+          {
+            path: '/games/dragonQuestProp',
+            name: 'dragonQuestProp',
+            component: () => import('@/views/games/components/dragonQuestProp.vue')
+          },
+          {
+            path: '/games/XuanYuanSwordStashes',
+            name: 'XuanYuanSwordStashes',
+            component: () => import('@/views/games/components/xuan-yuan-sword-stashes.vue')
+          },
+          {
+            path: '/games/XuanYuanSwordDevilPot',
+            name: 'XuanYuanSwordDevilPot',
+            component: () => import('@/views/games/components/xuan-yuan-sword-devil-pot.vue')
+          }
+        ]
+      }
     ]
     // children: [
     //   {

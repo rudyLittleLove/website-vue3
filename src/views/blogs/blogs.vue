@@ -25,7 +25,7 @@ var activeLabel = ref<string>('')
 const catalogs:fileInfo[] = [
   {
     label: "只需一个DOM，纯CSS实现线性跑马灯特效",
-    html:  import('../../../static/htmlFile/marquee.html?raw?raw')
+    html: import('../../../static/htmlFile/marquee.html?raw')
   },
   {
     label: "前端如何理解正则-由浅入深的学习",
