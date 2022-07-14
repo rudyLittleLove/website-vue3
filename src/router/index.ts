@@ -112,6 +112,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'dishes',
     component: () => import('@/views/dishes/index.vue')
   },
+  {
+    path: '/drawRect',
+    name: 'drawRect',
+    component: () => import('@/views/drawRect/index.vue')
+  },
 ]
 
 const router = createRouter({
