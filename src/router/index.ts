@@ -97,6 +97,21 @@ const routes: Array<RouteRecordRaw> = [
     name: 'coordinates',
     component: () => import('@/views/coordinates/Index.vue')
   },
+  {
+    path: '/getImageColor',
+    name: 'getImageColor',
+    component: () => import('@/views/getImageColor/index.vue')
+  },
+  {
+    path: '/gitCommands',
+    name: 'gitCommands',
+    component: () => import('@/views/gitCommands.vue')
+  },
+  {
+    path: '/dishes',
+    name: 'dishes',
+    component: () => import('@/views/dishes/index.vue')
+  },
 ]
 
 const router = createRouter({

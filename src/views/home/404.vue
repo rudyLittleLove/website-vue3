@@ -7,7 +7,13 @@
       text( text-anchor="middle" x="50%" y="85%" dy=".50em") 您访问的页面找不到哦
     use( xlink:href="#s-text" class="text" v-for="v in 5")
     use( xlink:href="#m-text" class="text mi" v-for="v in 5")
+  el-button( @click="$router.push({name: 'games'})" style="position: absolute;") 跳转
 </template>
+
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+const $router = useRouter();
+</script>
 
 <style lang="stylus" scoped>
 @keyframes stroke

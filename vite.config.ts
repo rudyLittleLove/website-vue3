@@ -19,6 +19,9 @@ export default defineConfig({
       'BASE_URL':"/"
     }
   },
+  server: {
+    host: '127.0.0.1'
+  },
   plugins: [
     vue(),
     AutoImport({

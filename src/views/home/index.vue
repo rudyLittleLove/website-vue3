@@ -13,10 +13,15 @@
 </template>
 
 <script lang="ts" setup>
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 import { ref, reactive, onMounted } from 'vue'
+// @ts-ignore
 import Warpdrive from '@/assets/js/warpdrive.js'
-import WebHeader from '@/views/home/header.vue'
+// @ts-ignore
 import circleConnect from '@/assets/js/circleConnect.js'
+import WebHeader from '@/views/home/header.vue'
+// const Warpdrive:any = require('@/assets/js/warpdrive.js')
+// const circleConnect:any = require('@/assets/js/circleConnect.js')
 
 var circle:any = ''
 var warpdrive:any = ''
@@ -49,7 +54,7 @@ const initBgAnimation = () => {
         autoResize: true,
         addMouseControls: false,
         addTouchControls: false,
-        starCount: (wrapDom.clientWidth * wrapDom.clientHeight) / (!!window.ActiveXObject || 'ActiveXObject' in window ? 2000 : 1000),
+        starCount: (wrapDom.clientWidth * wrapDom.clientHeight) / ('ActiveXObject' in window ? 2000 : 1000),
         starBgCount: 0,
         starfieldBackgroundColor: { r: 28, g: 39, b: 59 }
       })

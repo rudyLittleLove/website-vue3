@@ -51,7 +51,7 @@
       :page-size="pageSize"
       layout="total, sizes, prev, pager, next, jumper"
       :total="total")
-    el-button( type="success" size="mini" @click="switchTypeHandle" class="switch-button") 切换视图
+    el-button( type="success" @click="switchTypeHandle" class="switch-button") 切换视图
     el-input( v-model="searchVal" @keyup.native.enter="calcList" placeholder="请输入搜索值，回车确认")
       el-button( slot="append" icon="el-icon-search" @click="calcList")
 </template>

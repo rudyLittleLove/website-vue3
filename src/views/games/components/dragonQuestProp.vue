@@ -27,12 +27,12 @@ const type = ref<string>('index0')
   height 100%
   margin auto
   font-size 16px
-  >>>
+  :deep()
     .el-tabs__item
       color #ffffff
       &.is-active
         color #409EFF
-  >>>
+  :deep()
     .el-icon-arrow-left:before
     .el-icon-arrow-right:before
       color #409EFF
