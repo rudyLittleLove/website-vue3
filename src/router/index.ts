@@ -117,6 +117,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'drawRect',
     component: () => import('@/views/drawRect/index.vue')
   },
+  {
+    path: '/compressImage',
+    name: 'compressImage',
+    component: () => import('@/views/compressImage/index.vue')
+  },
 ]
 
 const router = createRouter({
