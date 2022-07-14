@@ -112,14 +112,14 @@ const menuData:Tree[] = [
         label: 'render',
         routeName: 'render'
       },
-      {
-        label: 'rectRandom',
-        routeName: 'rectRandom'
-      },
-      {
-        label: 'flipPage',
-        routeName: 'flipPage'
-      },
+      // {
+      //   label: 'rectRandom',
+      //   routeName: 'rectRandom'
+      // },
+      // {
+      //   label: 'flipPage',
+      //   routeName: 'flipPage'
+      // },
       {
         label: 'drawRect',
         routeName: 'drawRect'

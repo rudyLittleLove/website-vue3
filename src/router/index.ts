@@ -122,6 +122,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'compressImage',
     component: () => import('@/views/compressImage/index.vue')
   },
+  {
+    path: '/render',
+    name: 'render',
+    component: () => import('@/views/render/index.vue')
+  },
 ]
 
 const router = createRouter({
