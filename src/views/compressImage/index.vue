@@ -215,7 +215,7 @@ const convertBase64UrlToFile = (urlData:any, filename:any) => {
     }
     .el-image {
       width: 100%;
-      > /deep/ img {
+      > :deep() img {
         height: 140px;
         width: 100%;
       }

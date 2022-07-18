@@ -336,10 +336,10 @@ export default {
         width: 200px;
         margin-right: 10px;
       }
-      /deep/ .el-slider__runway {
+      :deep() .el-slider__runway {
         margin-top: 7px;
       }
-      /deep/ .el-slider__bar {
+      :deep() .el-slider__bar {
         display: none;
       }
       // .tip-text {

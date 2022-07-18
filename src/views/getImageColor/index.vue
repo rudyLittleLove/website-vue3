@@ -30,31 +30,43 @@ div.wrapper
 import { ref } from 'vue'
 // @ts-ignore
 import { getColor, getPalette } from '@/libs/color-thief.js'
+import { getCurrentInstance } from "vue";
 // const { getColor, getPalette }:any = require('@/libs/color-thief.js')
 
-const fileList = ref([])
+const fileList = ref<any>([])
 
 const changeHandle = (file:any, list:any) => {
-  fileList.value = list
-
   let reader = new FileReader()
   reader.readAsDataURL(file.raw)
   reader.onload = (e:any) => {
     // img.src = e.target.result
     getColor(e.target.result).then((color:[]) => {
       file.color = `rgb(${color.join(',')})`
+
+      updateRender(file, list)
     })
 
     getPalette(e.target.result, 6).then((colors:[]) => {
       file.colors = colors.map((v:[]) => `rgb(${v.join(',')})`)
+
+      updateRender(file, list)
     })
 
     getPalette(e.target.result, 18).then((colors:[]) => {
       file.colors18 = colors.map((v:[]) => `rgb(${v.join(',')})`)
+
+      updateRender(file, list)
     })
   }
 }
-const removeHandle = (fiel:any, list:any) => {
+
+const updateRender = (file:any, list:any) => {
+  if(file.color && file.colors && file.colors18){
+    fileList.value = [...list]
+  }
+}
+
+const removeHandle = (file:any, list:any) => {
   fileList.value = list
 }
 
