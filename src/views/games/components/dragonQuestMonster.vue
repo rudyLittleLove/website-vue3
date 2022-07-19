@@ -1,6 +1,6 @@
 <template lang="pug">
 .table-wrap
-  div
+  div( class="table-box" :style="`height: ${maxHeight - 130}px`")
     table( v-if="type === 'list'" cellspacing="0" cellpadding="0" border="0")
       colgroup
         col( width="80px")
@@ -49,10 +49,11 @@
       :current-page="pageNum"
       :page-sizes="[10, 20, 50, 100, 200, 500]"
       :page-size="pageSize"
+      small
       layout="total, sizes, prev, pager, next, jumper"
       :total="total")
-    el-button( type="success" @click="switchTypeHandle" class="switch-button") 切换视图
-    el-input( v-model="searchVal" @keyup.native.enter="calcList" placeholder="请输入搜索值，回车确认")
+    el-button( type="success" size="small" @click="switchTypeHandle" class="switch-button") 切换视图
+    el-input( v-model="searchVal" size="small" @keyup.native.enter="calcList" placeholder="请输入搜索值，回车确认")
       el-button( slot="append" icon="el-icon-search" @click="calcList")
 </template>
 
@@ -60,19 +61,23 @@
 import jsonData from "../../../../static/monsterData.json";
 import { ref, reactive, onMounted } from 'vue'
 
-var type = ref<string>('list');
-var data:any = jsonData.map((v:any, i:number) => {
+const type = ref<string>('list');
+const data:any = jsonData.map((v:any, i:number) => {
   v.No = i+1
   return v
 })
-var dataList:any = reactive([])
-var total = ref<number>(0)
-var pageNum = ref<number>(1)
-var pageSize = ref<number>(10)
-var searchVal = ref<string>('')
+const dataList:any = reactive([])
+const total = ref<number>(0)
+const pageNum = ref<number>(1)
+const pageSize = ref<number>(10)
+const searchVal = ref<string>('')
+const maxHeight = ref<number>(document.documentElement.clientHeight)
 
 onMounted(() => {
   calcList()
+  window.onresize = () => {
+    maxHeight.value = document.documentElement.clientHeight
+  }
 })
 
 const switchTypeHandle = ():void => {
@@ -261,9 +266,10 @@ const calcPage = (data:any, num:number, size:number, searchObj:object, xor?:bool
         font-size 14px
   .page-wrap
     height 80px
-    margin 10px auto 70px
+    margin 10px auto
     .el-pagination
       float none
+      // --el-text-color-regular #ffffff
     .el-input
       float left
       width 250px
