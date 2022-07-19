@@ -16,7 +16,7 @@
       tbody
         tr( v-for="item in dataList")
           td
-            el-image( class="el-img" :key="item.imgSrc" :src="item.url && getAssetsImages('../../../../static/yzdel/' + item.url)" :preview-src-list="item.urlList || []" lazy)
+            el-image( class="el-img" :key="item.imgSrc" :src="`http://rudyjoy.cn/static/yzdel/${item.url}`" :preview-src-list="item.urlList || []" lazy)
               div( slot="error")
                 i.el-icon-picture-outline
           td
@@ -33,7 +33,7 @@
       li( v-for="(item, i) in dataList")
         div
           //- img( ref="img" :src="item.imgSrc" :listen="listen")
-          el-image( class="el-img" :key="item.imgSrc" :src="item.url && getAssetsImages('../../../../static/yzdel/' + item.url)" :preview-src-list="item.urlList || []" lazy)
+          el-image( class="el-img" :key="item.imgSrc" :src="`http://rudyjoy.cn/static/yzdel/${item.url}`" :preview-src-list="item.urlList || []" lazy)
             div( slot="error")
               i.el-icon-picture-outline
           span No: {{item.No}}
@@ -61,7 +61,10 @@ import jsonData from "../../../../static/monsterData.json";
 import { ref, reactive, onMounted } from 'vue'
 
 var type = ref<string>('list');
-var data:any = jsonData
+var data:any = jsonData.map((v:any, i:number) => {
+  v.No = i+1
+  return v
+})
 var dataList:any = reactive([])
 var total = ref<number>(0)
 var pageNum = ref<number>(1)
@@ -102,7 +105,7 @@ const calcList = ():void => {
   // });
   pageNum.value = filterData.pageNum;
   total.value = filterData.count;
-  
+  dataList.splice(0)
   dataList.push(...filterData.data)
 }
 const calcPage = (data:any, num:number, size:number, searchObj:object, xor?:boolean):any => {
