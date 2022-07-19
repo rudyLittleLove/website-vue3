@@ -70,7 +70,7 @@ onUnmounted(() => {
 })
 
 const changeHandle = ():void => {
-  var search = `${value1}+${value2}=`;
+  var search = `${value1.value}+${value2.value}=`;
   var result = baseInfo.total.filter(item => item.includes(search));
   value3.value = result.length ? result[0].replace(search, "") : value3.value;
 }
