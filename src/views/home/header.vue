@@ -131,6 +131,10 @@ const menuData:Tree[] = [
       {
         label: 'coordinate',
         routeName: 'coordinates'
+      },
+      {
+        label: 'topology',
+        routeName: 'topology'
       }
     ]
   }

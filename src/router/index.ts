@@ -127,6 +127,16 @@ const routes: Array<RouteRecordRaw> = [
     name: 'render',
     component: () => import('@/views/render/index.vue')
   },
+  // {
+  //   path: '/workspace',
+  //   name: 'workspace',
+  //   component: () => import('@/views/workspace/index.vue')
+  // },
+  {
+    path: '/topology',
+    name: 'topology',
+    component: () => import('@/views/topology/index.vue')
+  },
 ]
 
 const router = createRouter({

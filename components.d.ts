@@ -29,8 +29,10 @@ declare module '@vue/runtime-core' {
     ElUpload: typeof import('element-plus/es')['ElUpload']
     IEpArrowLeft: typeof import('~icons/ep/arrow-left')['default']
     IEpArrowRight: typeof import('~icons/ep/arrow-right')['default']
+    IEpCirclePlusFilled: typeof import('~icons/ep/circle-plus-filled')['default']
     IEpDArrowRight: typeof import('~icons/ep/d-arrow-right')['default']
     IEpPromotion: typeof import('~icons/ep/promotion')['default']
+    IEpRemoveFilled: typeof import('~icons/ep/remove-filled')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
