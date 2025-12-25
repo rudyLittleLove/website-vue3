@@ -8,7 +8,8 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 
-const path = require('path')
+import { resolve } from 'path'  // 正确导入方式
+// const path = require('path')
 
 
 
@@ -49,7 +50,7 @@ export default defineConfig({
   resolve: {
     alias: {
       //设置别名
-      '@': path.resolve(__dirname, './src'),
+      '@': resolve(__dirname, './src'),
       // '@assets': path.resolve(__dirname, './src/assets')
     }
   }
